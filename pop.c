@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-void	pop_a_help(t_list *s, int *new_A, int *new_B)
+void	pop_b_help(t_list *s, int *new_A, int *new_B)
 {
 	int	i;
 	int	j;
@@ -24,7 +24,7 @@ void	pop_a_help(t_list *s, int *new_A, int *new_B)
 	s->A_len--;
 	s->B_len++;
 }
-void	ft_pa(t_list *s)
+void	ft_pb(t_list *s)
 {
 	int	*new_A;
 	int	*new_B;
@@ -33,11 +33,11 @@ void	ft_pa(t_list *s)
 	new_B = malloc(sizeof(int) * (s->B_len + 1));
 	if (!new_A || !new_B)
 		return (Error_exit(s));
-	pop_a_help(s, new_A, new_B);
+	pop_b_help(s, new_A, new_B);
 	write (1, "pb\n", 3);
 }
 
-void	pop_b_help(t_list *s, int *new_A, int *new_B)
+void	pop_a_help(t_list *s, int *new_A, int *new_B)
 {
 	int	i;
 	int	j;
@@ -59,7 +59,7 @@ void	pop_b_help(t_list *s, int *new_A, int *new_B)
 	s->B_len--;
 }
 
-void	ft_pb(t_list *s)
+void	ft_pa(t_list *s)
 {
 	int	*new_A;
 	int	*new_B;
@@ -68,6 +68,6 @@ void	ft_pb(t_list *s)
 	new_B = malloc(sizeof(int) * (s->B_len - 1));
 	if (!new_A || !new_B)
 		return ;
-	pop_b_help(s, new_A, new_B);
+	pop_a_help(s, new_A, new_B);
 	write(1, "pa\n", 3);
 }

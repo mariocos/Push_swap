@@ -18,13 +18,15 @@ void	ft_sort_four(t_list *s);
 int	main(int argc, char **argv);
 //setup.c
 void	Error_exit(t_list *s);
-int	*ft_populate_list(int argc, char **argv);
+int	*ft_populate_list(int argc, char **argv, t_list *s);
 int ft_check_params(int argc, char **argv);
 int	check_dupes(t_list *s);
 t_list	*setup(int argc, char **argv);
+int	isarg(int argc, char **argv);
 //libft_utils.c
 int	ft_strcmp(const char *str1, const char *str2);
-int	ft_atoi(const char *nptr);
+int	ft_atoi(const char *str, t_list *s);
+int		ft_isdigit(int c);
 //sort checkers
 int	r_sort_check(int *array, int array_len);
 int	r_rotated_check(int *array, int array_len);
@@ -67,9 +69,9 @@ void	ft_sort_back(t_list *s);
 void	ft_full_sort(t_list *s);
 //pop
 void	pop_a_help(t_list *s, int *new_A, int *new_B);
-void	ft_pa(t_list *s);
-void	pop_b_help(t_list *s, int *new_A, int *new_B);
 void	ft_pb(t_list *s);
+void	pop_b_help(t_list *s, int *new_A, int *new_B);
+void	ft_pa(t_list *s);
 //sort threee
 void	ft_invert_three(int *A);
 void	ft_case_zero(int *A);

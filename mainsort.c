@@ -10,6 +10,7 @@ void	free_all(t_list *s)
 	if (s->B)
 		free(s->B);
 	free(s);
+	exit(1);
 }
 
 int	main(int argc, char **argv)
@@ -18,9 +19,9 @@ int	main(int argc, char **argv)
 
 	s = setup(argc, argv);
 	if (!s)
-		return (0);
+		Error_exit(s);
 	if (sort_check(s->A, s->A_len) == 1)//theese two might leak but ill add the free function in a bit
-		return (0);
+		free_all(s);
 	else if (s->A_len >= 4)
 		ft_full_sort(s);
 	else if (s->A_len == 3)

@@ -1,5 +1,4 @@
 #include "refactor.h"
-#include <unistd.h>
 
 int	ft_strcmp(const char *str1, const char *str2)
 {
@@ -15,31 +14,49 @@ int	ft_strcmp(const char *str1, const char *str2)
 	return (0);
 }
 
-
-int	ft_atoi(const char *nptr)
+int		ft_isdigit(int c)
 {
-	int	result;
-	int		signal;
-	int		i;
-	int		hold;
+	return (c >= 48 && c <= 57);
+}
 
-	signal = 1;
-	result = 0;
+int	ft_atoi(const char *str, t_list *s)
+{
+	long	i;
+	long	nbr;
+	int		isneg;
+
 	i = 0;
-	if (ft_strcmp(nptr,"-2147483648") == 1)
-		return (-2147483648);
-	if (nptr[i] == '-')
+	nbr = 0;
+	isneg = 0;
+	while (str[i] != '\0' && (str[i] == 32 || str[i] == '\t' || str[i] == '\n'
+			|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f'))
+		i++;
+	if (str[i] != '\0' && str[i] == '-')
 	{
-		signal = -1;
+		isneg = 1;
 		i++;
 	}
-	else if (nptr[i] == '+')
+	else if (str[i] == '+')
 		i++;
-	while (nptr[i] <= '9' && nptr[i] >= '0')
+	while (str[i] != '\0' && ft_isdigit(str[i]))
+		nbr = (nbr * 10) + (str[i++] - '0');
+	if (isneg == 1)
+		nbr *= -1;
+	if (nbr > 2147483647 || nbr < -2147483648)
+		Error_exit(s);
+	return (nbr);
+}
+
+int	isarg(int argc, char **argv)
+{
+	int	i;
+
+	i = 1;
+	while (i < argc)
 	{
-		hold = nptr[i] - 48;
-		result = (result * 10) + hold;
+		if (!argv[i] || argv[i][0] == '\0')
+			return (0);
 		i++;
 	}
-	return (signal * result);
+	return (1);
 }

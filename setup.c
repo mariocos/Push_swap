@@ -5,17 +5,19 @@
 
 void	Error_exit(t_list *s)
 {
-	if (s->A)
-		free(s->A);
-	if (s->B)
-		free(s->B);
 	if (s)
+	{
+		if (s->A)
+			free(s->A);
+		if (s->B)
+			free(s->B);
 		free (s);
-	write(2, "ERROR\n", 6);
-	exit(0);//not sure on how to use it
+	}
+	write(2, "Error\n", 6);
+	exit(1);
 }
 
-int	*ft_populate_list(int argc, char **argv)
+int	*ft_populate_list(int argc, char **argv, t_list *s)
 {
 	int	*list;
 	int	i;
@@ -26,28 +28,30 @@ int	*ft_populate_list(int argc, char **argv)
 		return (0);
 	while (i < argc - 1)
 	{
-		list[i] = ft_atoi(argv[i + 1]);
+		list[i] = ft_atoi(argv[i + 1], s);
 		i++;
 	}
 	return (list);
 }
 
-int ft_check_params(int argc, char **argv)
+int	ft_check_params(int argc, char **argv)
 {
-	int	i;
-	int	argc_i;
+	int i;
+	int argc_i;
 
 	argc_i = 1;
 	while (argc_i < argc)
 	{
 		i = 0;
-		if (argv[argc_i][i] == '-' && argv[argc_i][i + 1] == '\0')
+
+		if ((argv[argc_i][i] == '-' || argv[argc_i][i] == '+' || argv[argc_i][i] == ' ')
+			&& argv[argc_i][i + 1] == '\0')//unsure if numbers should be allowed to start with a +
 			return (0);
 		while (argv[argc_i][i] != '\0')
 		{
-			if (argv[argc_i][0] == '-')
+			if (i == 0 && (argv[argc_i][i] == '-' || argv[argc_i][i] == '+'))
 				i++;
-			if (argv[argc_i][i] < '0' || argv[argc_i][i] > '9')
+			if (ft_isdigit(argv[argc_i][i]) == 0)
 				return (0);
 			i++;
 		}
@@ -55,6 +59,7 @@ int ft_check_params(int argc, char **argv)
 	}
 	return (1);
 }
+
 
 int	check_dupes(t_list *s)
 {
@@ -87,12 +92,14 @@ t_list	*setup(int argc, char **argv)
 	t_list	*s;
 
 	s = NULL;
+	if (isarg(argc, argv) == 0)
+		Error_exit(s);
 	if (ft_check_params(argc, argv) == 0)
 		Error_exit(s);
 	s = (t_list *)malloc(sizeof(t_list));
 	if (!s)
 		Error_exit(s);
-	s->A = ft_populate_list(argc, argv);
+	s->A = ft_populate_list(argc, argv, s);
 	s->A_len = argc - 1;
 	s->B_len = 0;
 	s->B = (int *)malloc(sizeof(int) * (argc - 1));

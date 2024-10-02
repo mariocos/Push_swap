@@ -28,7 +28,7 @@ void	ft_sort_back(t_list *s)
 			ft_rra(s);
 			rots--;
 		}
-		ft_pb(s);
+		ft_pa(s);
 	}
 	if (rots > 0)
 	{
@@ -42,13 +42,13 @@ void	ft_full_sort(t_list *s)
 	int	chpst_index;
 
 	while (s->A_len > 3)
-		ft_pa(s);
+		ft_pb(s);
 	ft_sort_three(s);
 	while (s->B_len > 0)
 	{
 		chpst_index = cheapest_index(s);
 		ft_prepare_to_pop(s, chpst_index);
-		ft_pb(s);
+		ft_pa(s);
 	}
 	ft_fast_rotate_A(s);
 }
