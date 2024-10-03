@@ -6,7 +6,7 @@
 /*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 12:43:01 by mariocos          #+#    #+#             */
-/*   Updated: 2024/10/03 15:21:32 by mariocos         ###   ########.fr       */
+/*   Updated: 2024/10/03 17:49:23 by mariocos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,4 +91,16 @@ void	ft_case_one(int *a);
 void	ft_case_three(int *a);
 int		ft_index_calc(int *a, int value, int len);
 void	ft_sort_three(t_list *stack);
+//special
+t_list	*special(t_list *s, char *str);
+int		countwords(char const *s, char c);
+int		wordlen(char *s, char c);
+char	**ft_split(char const *s, char c);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+//special utils
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+char	*ft_strdup(const char *s);
+size_t	ft_strlen(const char *str);
+char	*ft_strcat(char *dst, const char *src, char	*ret);
+char	*ft_strjoin(char const *s1, char const *s2);
 #endif

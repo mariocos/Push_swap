@@ -18,6 +18,8 @@ SRCS =	coordination.c \
 		price_utils.c \
 		rotations_utils.c \
 		sort_three_utils.c \
+		special_case.c \
+		special_case_utils.c \
 
 OBJS = ${SRCS:.c=.o}
 

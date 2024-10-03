@@ -6,7 +6,7 @@
 /*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 12:46:21 by mariocos          #+#    #+#             */
-/*   Updated: 2024/10/03 14:20:48 by mariocos         ###   ########.fr       */
+/*   Updated: 2024/10/03 18:02:22 by mariocos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int	*ft_populate_list(int argc, char **argv, t_list *s)
 		return (0);
 	while (i < argc - 1)
 	{
+		if (ft_strlen(argv[i + 1]) > 11)
+			error_exit(s);
 		list[i] = ft_atoi(argv[i + 1], s);
 		i++;
 	}

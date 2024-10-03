@@ -6,7 +6,7 @@
 /*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 12:35:31 by mariocos          #+#    #+#             */
-/*   Updated: 2024/10/03 13:08:29 by mariocos         ###   ########.fr       */
+/*   Updated: 2024/10/03 17:38:09 by mariocos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,11 @@ int	main(int argc, char **argv)
 {
 	t_list	*s;
 
-	s = setup(argc, argv);
+	s = NULL;
+	if (argc == 2)
+		s = special(s, argv[1]);
+	else
+		s = setup(argc, argv);
 	if (!s)
 		error_exit(s);
 	if (sort_check(s->a, s->a_len) == 1)
