@@ -1,32 +1,41 @@
-#include "refactor.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotations.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/03 12:46:04 by mariocos          #+#    #+#             */
+/*   Updated: 2024/10/03 13:01:31 by mariocos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
 
 void	ft_rr(t_list *list)
 {
 	int	i;
 	int	j;
-	int	hold_A;
-	int	hold_B;
+	int	hold_a;
+	int	hold_b;
 
 	i = 0;
 	j = 1;
-	hold_A = list->A[0];
-	hold_B = list->B[0];//can save lines with using just one hold variable
-	if (list->A_len > 1)
+	hold_a = list->a[0];
+	hold_b = list->b[0];
+	if (list->a_len > 1)
 	{
-		while (j < list->A_len)
-			list->A[i++] = list->A[j++];
-		list->A[j - 1] = hold_A;
+		while (j < list->a_len)
+			list->a[i++] = list->a[j++];
+		list->a[j - 1] = hold_a;
 	}
 	i = 0;
 	j = 1;
-	if(list->B_len > 1)
+	if (list->b_len > 1)
 	{
-		while (j < list->B_len)
-			list->B[i++] = list->B[j++];
-		list->B[j - 1] = hold_B;
+		while (j < list->b_len)
+			list->b[i++] = list->b[j++];
+		list->b[j - 1] = hold_b;
 	}
 	write (1, "rr\n", 3);
 }
@@ -35,36 +44,36 @@ void	ft_rrr(t_list *list)
 {
 	int	i;
 	int	j;
-	int	hold_A;
-	int	hold_B;
+	int	hold_a;
+	int	hold_b;
 
-	hold_A = list->A[list->A_len - 1];
-	hold_B = list->B[list->B_len - 1];//can save lines with using just one hold variable
-	i = list->A_len - 1;
-	j = list->A_len - 2;
-	if (list->A_len > 1)
+	hold_a = list->a[list->a_len - 1];
+	hold_b = list->a[list->b_len - 1];
+	i = list->a_len - 1;
+	j = list->a_len - 2;
+	if (list->a_len > 1)
 	{
 		while (i > 0)
-			list->A[i--] = list->A[j--];
-		list->A[0] = hold_A;
+			list->a[i--] = list->a[j--];
+		list->a[0] = hold_a;
 	}
-	i = list->B_len - 1;
-	j = list->B_len - 2;
-	if(list->B_len > 1)
+	i = list->b_len - 1;
+	j = list->b_len - 2;
+	if (list->b_len > 1)
 	{
 		while (i > 0)
-			list->B[i--] = list->B[j--];
-		list->B[0] = hold_B;
+			list->b[i--] = list->b[j--];
+		list->b[0] = hold_b;
 	}
 	write (1, "rrr\n", 4);
 }
 
-void	ft_fast_rotate_A(t_list *s)//might not be usde again
+void	ft_fast_rotate_a(t_list *s)
 {
 	int	min_index;
-	int	A_moves;
+	int	a_moves;
 
-	min_index = ft_find_min(s->A, s->A_len);
-	A_moves = ft_move_calc(min_index, s->A_len);
-	ft_do_moves(s, A_moves, 0);
+	min_index = ft_find_min(s->a, s->a_len);
+	a_moves = ft_move_calc(min_index, s->a_len);
+	ft_do_moves(s, a_moves, 0);
 }

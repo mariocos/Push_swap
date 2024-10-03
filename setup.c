@@ -1,16 +1,25 @@
-#include "refactor.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   setup.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/03 12:46:21 by mariocos          #+#    #+#             */
+/*   Updated: 2024/10/03 13:04:53 by mariocos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	Error_exit(t_list *s)
+#include "push_swap.h"
+
+void	error_exit(t_list *s)
 {
 	if (s)
 	{
-		if (s->A)
-			free(s->A);
-		if (s->B)
-			free(s->B);
+		if (s->a)
+			free(s->a);
+		if (s->b)
+			free(s->b);
 		free (s);
 	}
 	write(2, "Error\n", 6);
@@ -36,16 +45,16 @@ int	*ft_populate_list(int argc, char **argv, t_list *s)
 
 int	ft_check_params(int argc, char **argv)
 {
-	int i;
-	int argc_i;
+	int	i;
+	int	argc_i;
 
 	argc_i = 1;
 	while (argc_i < argc)
 	{
 		i = 0;
-
-		if ((argv[argc_i][i] == '-' || argv[argc_i][i] == '+' || argv[argc_i][i] == ' ')
-			&& argv[argc_i][i + 1] == '\0')//unsure if numbers should be allowed to start with a +
+		if ((argv[argc_i][i] == '-'
+			|| argv[argc_i][i] == '+' || argv[argc_i][i] == ' ')
+			&& argv[argc_i][i + 1] == '\0')
 			return (0);
 		while (argv[argc_i][i] != '\0')
 		{
@@ -60,7 +69,6 @@ int	ft_check_params(int argc, char **argv)
 	return (1);
 }
 
-
 int	check_dupes(t_list *s)
 {
 	int	i;
@@ -70,13 +78,13 @@ int	check_dupes(t_list *s)
 	i = 0;
 	j = 0;
 	flag = 0;
-	while (i < s->A_len)
+	while (i < s->a_len)
 	{
 		j = 0;
 		flag = 0;
-		while (j < s->A_len)
+		while (j < s->a_len)
 		{
-			if (s->A[j] == s->A[i])
+			if (s->a[j] == s->a[i])
 				flag++;
 			if (flag > 1)
 				return (0);
@@ -93,19 +101,19 @@ t_list	*setup(int argc, char **argv)
 
 	s = NULL;
 	if (isarg(argc, argv) == 0)
-		Error_exit(s);
+		error_exit(s);
 	if (ft_check_params(argc, argv) == 0)
-		Error_exit(s);
+		error_exit(s);
 	s = (t_list *)malloc(sizeof(t_list));
 	if (!s)
-		Error_exit(s);
-	s->A = ft_populate_list(argc, argv, s);
-	s->A_len = argc - 1;
-	s->B_len = 0;
-	s->B = (int *)malloc(sizeof(int) * (argc - 1));
-	if (!s->B)
-		Error_exit(s);
+		error_exit(s);
+	s->a = ft_populate_list(argc, argv, s);
+	s->a_len = argc - 1;
+	s->b_len = 0;
+	s->b = (int *)malloc(sizeof(int) * (argc - 1));
+	if (!s->b)
+		error_exit(s);
 	if (check_dupes(s) == 0)
-		Error_exit(s);
+		error_exit(s);
 	return (s);
 }

@@ -1,11 +1,17 @@
-#include "refactor.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-//this file used to be used to find the location in a r sorted array but this version does
-//the exact same but into a sorted array like 1 2 3 4 5
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   location.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/03 12:32:56 by mariocos          #+#    #+#             */
+/*   Updated: 2024/10/03 12:58:32 by mariocos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-//changed to sorted
+#include "push_swap.h"
+
 int	ft_simple_index_calc(int *array, int len, int target)
 {
 	int	i;
@@ -17,7 +23,7 @@ int	ft_simple_index_calc(int *array, int len, int target)
 			return (i);
 		i++;
 	}
-	return (-1);//should never reach here it means theres a problem
+	return (-1);
 }
 
 int	ft_hard_index_calc(int *array, int len, int target)
@@ -41,18 +47,17 @@ int	ft_hard_index_calc(int *array, int len, int target)
 	return (ret_ind);
 }
 
-//returns index to be brought up to pop into sorted stack
-int	ft_target_index(int *Array, int len, int target_value)
+int	ft_target_index(int *array, int len, int target_value)
 {
-	if (rotated_check(Array, len) == 0 && sort_check(Array, len) == 0)
+	if (rotated_check(array, len) == 0 && sort_check(array, len) == 0)
 		return (-1);
-	if (ft_ishighest(Array, len, target_value) == 1)
-		return (ft_bottom_index(Array, len));//since its now sorted its bottom index
-	if (ft_islowest(Array, len, target_value) == 1)
-		return (ft_bottom_index(Array, len));
-	if (sort_check(Array, len) == 1)
-		return (ft_simple_index_calc(Array, len, target_value));
-	if (rotated_check(Array, len) == 1)
-		return (ft_hard_index_calc(Array, len, target_value));
+	if (ft_ishighest(array, len, target_value) == 1)
+		return (ft_bottom_index(array, len));
+	if (ft_islowest(array, len, target_value) == 1)
+		return (ft_bottom_index(array, len));
+	if (sort_check(array, len) == 1)
+		return (ft_simple_index_calc(array, len, target_value));
+	if (rotated_check(array, len) == 1)
+		return (ft_hard_index_calc(array, len, target_value));
 	return (-1);
 }

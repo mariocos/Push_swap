@@ -1,69 +1,78 @@
-#include "refactor.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   coordination.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/03 12:26:30 by mariocos          #+#    #+#             */
+/*   Updated: 2024/10/03 12:56:47 by mariocos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	ft_coordinate_moves(t_list *s, int A_moves, int B_moves)
-{
-		while (A_moves < 0 && B_moves < 0)
-		{
-			A_moves++;
-			B_moves++;
-			ft_rrr(s);
-		}
-		while (A_moves < 0)
-		{
-			ft_rra(s);
-			A_moves++;
-		}
-		while (B_moves < 0)
-		{
-			ft_rrb(s);
-			B_moves++;
-		}
-	reverse_rotations(s, A_moves, B_moves);
-}
+#include "push_swap.h"
 
-void	reverse_rotations(t_list *s, int A_moves, int B_moves)
+void	ft_coordinate_moves(t_list *s, int a_moves, int b_moves)
 {
-	while (A_moves > 0 && B_moves > 0)
+	while (a_moves < 0 && b_moves < 0)
 	{
-		A_moves--;
-		B_moves--;
-		ft_rr(s);
+		a_moves++;
+		b_moves++;
+		ft_rrr(s);
 	}
-	while (A_moves > 0)
-	{
-		ft_ra(s);
-		A_moves--;
-	}
-	while (B_moves > 0)
-	{
-		ft_rb(s);
-		B_moves--;
-	}
-}
-
-void	ft_do_moves(t_list *s, int A_moves, int B_moves)
-{
-	while (A_moves < 0)
+	while (a_moves < 0)
 	{
 		ft_rra(s);
-		A_moves++;
+		a_moves++;
 	}
-	while (B_moves < 0)
+	while (b_moves < 0)
 	{
 		ft_rrb(s);
-		B_moves++;
+		b_moves++;
 	}
-	while (A_moves > 0)
+	reverse_rotations(s, a_moves, b_moves);
+}
+
+void	reverse_rotations(t_list *s, int a_moves, int b_moves)
+{
+	while (a_moves > 0 && b_moves > 0)
+	{
+		a_moves--;
+		b_moves--;
+		ft_rr(s);
+	}
+	while (a_moves > 0)
 	{
 		ft_ra(s);
-		A_moves--;
+		a_moves--;
 	}
-	while (B_moves > 0)
+	while (b_moves > 0)
 	{
 		ft_rb(s);
-		B_moves--;
+		b_moves--;
+	}
+}
+
+void	ft_do_moves(t_list *s, int a_moves, int b_moves)
+{
+	while (a_moves < 0)
+	{
+		ft_rra(s);
+		a_moves++;
+	}
+	while (b_moves < 0)
+	{
+		ft_rrb(s);
+		b_moves++;
+	}
+	while (a_moves > 0)
+	{
+		ft_ra(s);
+		a_moves--;
+	}
+	while (b_moves > 0)
+	{
+		ft_rb(s);
+		b_moves--;
 	}
 }

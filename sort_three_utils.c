@@ -1,9 +1,18 @@
-#include "refactor.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_three_utils.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/03 12:47:10 by mariocos          #+#    #+#             */
+/*   Updated: 2024/10/03 13:02:17 by mariocos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_index_calc(int *A, int value, int len)
+#include "push_swap.h"
+
+int	ft_index_calc(int *a, int value, int len)
 {
 	int	i;
 	int	count;
@@ -12,7 +21,7 @@ int	ft_index_calc(int *A, int value, int len)
 	count = 0;
 	while (i < len)
 	{
-		if (value > A[i])
+		if (value > a[i])
 			count++;
 		i++;
 	}

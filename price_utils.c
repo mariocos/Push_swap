@@ -1,10 +1,17 @@
-#include "refactor.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   price_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/03 12:40:45 by mariocos          #+#    #+#             */
+/*   Updated: 2024/10/03 12:45:30 by mariocos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-/*checks if index is more easily reached through rotation or reverse rotation
-returns positive values for rotations and negative for reverse rotations*/
+#include "push_swap.h"
+
 int	ft_move_calc(int index, int len)
 {
 	if (index < len / 2)
@@ -13,8 +20,6 @@ int	ft_move_calc(int index, int len)
 		return ((len - index) * -1);
 }
 
-//returns the summ of the absolute value of a and the absolute value of b
-//the name is modulus because in portuguese we call this "modulo"
 int	modulus_summ(int a, int b)
 {
 	if (a < 0)
@@ -24,8 +29,8 @@ int	modulus_summ(int a, int b)
 	return (a + b);
 }
 
-int ft_modulus(int nb)//this could in theory have a problem due to min int being larger than max int
-{	
+int	ft_modulus(int nb)
+{
 	if (nb < 0)
 		nb *= -1;
 	return (nb);

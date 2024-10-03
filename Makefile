@@ -1,9 +1,8 @@
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror -I includes
 
 NAME = push_swap
 
-#Source files
 SRCS =	coordination.c \
 		full_sort.c \
 		location.c \
@@ -20,7 +19,6 @@ SRCS =	coordination.c \
 		rotations_utils.c \
 		sort_three_utils.c \
 
-#Object files
 OBJS = ${SRCS:.c=.o}
 
 RM = rm -f

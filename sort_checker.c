@@ -1,7 +1,16 @@
-#include "refactor.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_checker.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/03 12:47:12 by mariocos          #+#    #+#             */
+/*   Updated: 2024/10/03 13:05:05 by mariocos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
 
 int	sort_check(int *array, int array_len)
 {
@@ -21,8 +30,7 @@ int	sort_check(int *array, int array_len)
 	return (1);
 }
 
-
-int	r_sort_check(int *array, int array_len)// checks for descending order wich is desired in the B stack
+int	r_sort_check(int *array, int array_len)
 {
 	int	i;
 
@@ -57,7 +65,7 @@ int	rotated_check(int *array, int array_len)
 			flag++;
 		i++;
 	}
-	if (flag > 1)//flag counts how many rotation points there are
+	if (flag > 1)
 		return (0);
 	if (flag == 1 && array[0] < array[array_len - 1])
 		return (0);

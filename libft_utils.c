@@ -1,4 +1,16 @@
-#include "refactor.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/03 12:31:49 by mariocos          #+#    #+#             */
+/*   Updated: 2024/10/03 13:08:46 by mariocos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
 
 int	ft_strcmp(const char *str1, const char *str2)
 {
@@ -14,7 +26,7 @@ int	ft_strcmp(const char *str1, const char *str2)
 	return (0);
 }
 
-int		ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	return (c >= 48 && c <= 57);
 }
@@ -43,7 +55,7 @@ int	ft_atoi(const char *str, t_list *s)
 	if (isneg == 1)
 		nbr *= -1;
 	if (nbr > 2147483647 || nbr < -2147483648)
-		Error_exit(s);
+		error_exit(s);
 	return (nbr);
 }
 
