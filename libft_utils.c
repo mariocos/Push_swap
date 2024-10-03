@@ -6,7 +6,7 @@
 /*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 12:31:49 by mariocos          #+#    #+#             */
-/*   Updated: 2024/10/03 18:00:49 by mariocos         ###   ########.fr       */
+/*   Updated: 2024/10/03 18:11:09 by mariocos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	ft_atoi(const char *str, t_list *s)
 	}
 	else if (str[i] == '+')
 		i++;
-	while (str[i] != '\0' && ft_isdigit(str[i]))
+	while (str[i] != '\0' && ft_isdigit(str[i]) && nbr < 2147483648)
 		nbr = (nbr * 10) + (str[i++] - '0');
 	if (isneg == 1)
 		nbr *= -1;

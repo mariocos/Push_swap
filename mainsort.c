@@ -6,7 +6,7 @@
 /*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 12:35:31 by mariocos          #+#    #+#             */
-/*   Updated: 2024/10/03 17:38:09 by mariocos         ###   ########.fr       */
+/*   Updated: 2024/10/03 18:30:52 by mariocos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 		error_exit(s);
 	if (sort_check(s->a, s->a_len) == 1)
 		free_all(s);
-	else if (s->a_len >= 4)
+	else if (s->a_len > 3)
 		ft_full_sort(s);
 	else if (s->a_len == 3)
 		ft_sort_three(s);
