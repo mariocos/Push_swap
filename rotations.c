@@ -6,7 +6,7 @@
 /*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 12:46:04 by mariocos          #+#    #+#             */
-/*   Updated: 2024/10/03 13:01:31 by mariocos         ###   ########.fr       */
+/*   Updated: 2024/10/03 15:19:09 by mariocos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_rrr(t_list *list)
 	int	hold_b;
 
 	hold_a = list->a[list->a_len - 1];
-	hold_b = list->a[list->b_len - 1];
+	hold_b = list->b[list->b_len - 1];
 	i = list->a_len - 1;
 	j = list->a_len - 2;
 	if (list->a_len > 1)

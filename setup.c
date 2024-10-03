@@ -6,7 +6,7 @@
 /*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 12:46:21 by mariocos          #+#    #+#             */
-/*   Updated: 2024/10/03 13:04:53 by mariocos         ###   ########.fr       */
+/*   Updated: 2024/10/03 14:20:48 by mariocos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	error_exit(t_list *s)
 			free(s->b);
 		free (s);
 	}
-	write(2, "Error\n", 6);
+	write (2, "Error\n", 6);
 	exit(1);
 }
 
