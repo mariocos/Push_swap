@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   pop.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 12:39:00 by mariocos          #+#    #+#             */
-/*   Updated: 2024/10/03 13:08:14 by mariocos         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:45:33 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	pop_b_help(t_list *s, int *new_a, int *new_b)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort_checker.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 12:47:12 by mariocos          #+#    #+#             */
-/*   Updated: 2024/10/03 13:05:05 by mariocos         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:46:01 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	sort_check(int *array, int array_len)
 {

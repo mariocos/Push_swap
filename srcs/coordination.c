@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   coordination.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 12:26:30 by mariocos          #+#    #+#             */
-/*   Updated: 2024/10/03 12:56:47 by mariocos         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:45:04 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_coordinate_moves(t_list *s, int a_moves, int b_moves)
 {

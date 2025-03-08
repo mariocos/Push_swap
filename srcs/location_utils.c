@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   location_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 12:32:35 by mariocos          #+#    #+#             */
-/*   Updated: 2024/10/03 12:58:07 by mariocos         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:45:19 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_islowest(int *array, int len, int check)
 {

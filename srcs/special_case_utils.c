@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   special_case_utils.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 17:44:25 by mariocos          #+#    #+#             */
-/*   Updated: 2024/10/03 17:48:45 by mariocos         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:46:11 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 size_t	ft_strlen(const char *str)
 {

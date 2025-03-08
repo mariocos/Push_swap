@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   price.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 12:41:02 by mariocos          #+#    #+#             */
-/*   Updated: 2024/10/03 15:20:28 by mariocos         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:45:44 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_largest_between(int a, int b)
 {

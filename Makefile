@@ -1,43 +1,45 @@
+NAME = Push_swap
+
+SRC_PATH = ./srcs
+OBJ_DIR = ./objs
+
+SRCS =	$(SRC_PATH)/coordination.c \
+		$(SRC_PATH)/full_sort.c \
+		$(SRC_PATH)/location.c \
+		$(SRC_PATH)/pop.c \
+		$(SRC_PATH)/price.c \
+		$(SRC_PATH)/rotations.c \
+		$(SRC_PATH)/sort_checker.c \
+		$(SRC_PATH)/sort_three.c \
+		$(SRC_PATH)/setup.c \
+		$(SRC_PATH)/mainsort.c \
+		$(SRC_PATH)/libft_utils.c \
+		$(SRC_PATH)/location_utils.c \
+		$(SRC_PATH)/price_utils.c \
+		$(SRC_PATH)/rotations_utils.c \
+		$(SRC_PATH)/sort_three_utils.c \
+		$(SRC_PATH)/special_case.c \
+		$(SRC_PATH)/special_case_utils.c \
+
+OBJ = $(SRCS:$(SRC_PATH)/%.c=$(OBJ_DIR)/%.o)
+
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I includes
+CFLAGS = -Wall -Werror -Wextra -g
 
-NAME = push_swap
+all: $(NAME)
 
-SRCS =	coordination.c \
-		full_sort.c \
-		location.c \
-		pop.c \
-		price.c \
-		rotations.c \
-		sort_checker.c \
-		sort_three.c \
-		setup.c \
-		mainsort.c \
-		libft_utils.c \
-		location_utils.c \
-		price_utils.c \
-		rotations_utils.c \
-		sort_three_utils.c \
-		special_case.c \
-		special_case_utils.c \
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-OBJS = ${SRCS:.c=.o}
-
-RM = rm -f
-
-.c.o:
-	${CC} ${CFLAGS} -c $< -o $@
-
-${NAME}: ${OBJS}
-	${CC} ${CFLAGS} ${OBJS} -o ${NAME}
-
-all: ${NAME}
+$(OBJ_DIR)/%.o: $(SRC_PATH)/%.c
+	@mkdir -p $(@D)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	${RM} ${OBJS}
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
-	${RM} ${NAME}
+	rm -rf $(NAME)
 
 re: fclean all
 

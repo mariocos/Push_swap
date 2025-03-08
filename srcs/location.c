@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   location.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 12:32:56 by mariocos          #+#    #+#             */
-/*   Updated: 2024/10/03 15:19:36 by mariocos         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:45:26 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_simple_index_calc(int *array, int len, int target)
 {

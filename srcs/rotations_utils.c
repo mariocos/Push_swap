@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rotations_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 12:45:45 by mariocos          #+#    #+#             */
-/*   Updated: 2024/10/03 13:00:42 by mariocos         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:45:48 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_ra(t_list *s)
 {
