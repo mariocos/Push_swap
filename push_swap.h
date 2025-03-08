@@ -1,14 +1,10 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mariocos <mariocos@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 12:43:01 by mariocos          #+#    #+#             */
-/*   Updated: 2024/10/03 17:49:23 by mariocos         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/****************************************/
+/*      (\__/)                          */
+/*      (o^.^)                          */
+/*     z(_(")_(")_                      */
+/*                                      */
+/*   Mariocos: push_swap revamped       */
+/****************************************/
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -24,10 +20,9 @@ typedef struct s_list
 	int	*b;
 	int	b_len;
 }		t_list;
-//main.c
+
 void	free_all(t_list *s);
 void	ft_sort_four(t_list *s);
-int		main(int argc, char **argv);
 //setup.c
 void	error_exit(t_list *s);
 int		*ft_populate_list(int argc, char **argv, t_list *s);
@@ -80,9 +75,7 @@ void	ft_prepare_to_pop(t_list *s, int b_index);
 void	ft_sort_back(t_list *s);
 void	ft_full_sort(t_list *s);
 //pop
-void	pop_a_help(t_list *s, int *new_a, int *new_b);
 void	ft_pb(t_list *s);
-void	pop_b_help(t_list *s, int *new_a, int *new_b);
 void	ft_pa(t_list *s);
 //sort threee
 void	ft_invert_three(int *a);
@@ -103,4 +96,5 @@ char	*ft_strdup(const char *s);
 size_t	ft_strlen(const char *str);
 char	*ft_strcat(char *dst, const char *src, char	*ret);
 char	*ft_strjoin(char const *s1, char const *s2);
+
 #endif

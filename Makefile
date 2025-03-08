@@ -6,9 +6,7 @@ OBJ_DIR = ./objs
 SRCS =	$(SRC_PATH)/coordination.c \
 		$(SRC_PATH)/full_sort.c \
 		$(SRC_PATH)/location.c \
-		$(SRC_PATH)/pop.c \
 		$(SRC_PATH)/price.c \
-		$(SRC_PATH)/rotations.c \
 		$(SRC_PATH)/sort_checker.c \
 		$(SRC_PATH)/sort_three.c \
 		$(SRC_PATH)/setup.c \
@@ -16,10 +14,12 @@ SRCS =	$(SRC_PATH)/coordination.c \
 		$(SRC_PATH)/libft_utils.c \
 		$(SRC_PATH)/location_utils.c \
 		$(SRC_PATH)/price_utils.c \
-		$(SRC_PATH)/rotations_utils.c \
 		$(SRC_PATH)/sort_three_utils.c \
 		$(SRC_PATH)/special_case.c \
 		$(SRC_PATH)/special_case_utils.c \
+		$(SRC_PATH)/moves/pop.c \
+		$(SRC_PATH)/moves/simple_rotations.c \
+		$(SRC_PATH)/moves/double_rotations.c \
 
 OBJ = $(SRCS:$(SRC_PATH)/%.c=$(OBJ_DIR)/%.o)
 
