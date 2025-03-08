@@ -13,7 +13,7 @@ void	ft_pb(t_list *s)
 	int	*new_a;
 	int	*new_b;
 	int	i = 0;
-	int	j = 0;
+	int	j = 1;
 
 	new_a = malloc(sizeof(int) * (s->a_len - 1));
 	new_b = malloc(sizeof(int) * (s->b_len + 1));
@@ -39,8 +39,8 @@ void	ft_pa(t_list *s)
 {
 	int	*new_a;
 	int	*new_b;
-	int	j = 0;
 	int	i = 0;
+	int	j = 1;
 
 	new_a = malloc(sizeof(int) * (s->a_len + 1));
 	new_b = malloc(sizeof(int) * (s->b_len - 1));

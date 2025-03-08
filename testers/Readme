@@ -1,0 +1,13 @@
+/****************************************/
+/*      (\__/)                          */
+/*      (o^.^)                          */
+/*     z(_(")_(")_                      */
+/*                                      */
+/*   Mariocos: push_swap revamped       */
+/****************************************/
+
+Hello, this Readme is respective to theese testers.
+
+The checker_linux file is the one given to us by 42, and the .sh files were created by me.
+
+To use the testers just make sure you named your executable "Push_swap" and run these scripts.
