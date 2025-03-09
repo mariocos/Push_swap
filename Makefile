@@ -9,15 +9,16 @@ SRCS =	$(SRC_PATH)/coordination.c \
 		$(SRC_PATH)/price.c \
 		$(SRC_PATH)/sort_checker.c \
 		$(SRC_PATH)/sort_three.c \
-		$(SRC_PATH)/setup.c \
 		$(SRC_PATH)/mainsort.c \
-		$(SRC_PATH)/libft_utils.c \
 		$(SRC_PATH)/location_utils.c \
 		$(SRC_PATH)/price_utils.c \
 		$(SRC_PATH)/sort_three_utils.c \
-		$(SRC_PATH)/special_case.c \
-		$(SRC_PATH)/special_case_utils.c \
 		$(SRC_PATH)/moves/pop.c \
+		$(SRC_PATH)/lib/free_utils.c \
+		$(SRC_PATH)/lib/ft_split.c \
+		$(SRC_PATH)/lib/join_args.c \
+		$(SRC_PATH)/lib/libft_utils.c \
+		$(SRC_PATH)/parser/setup.c \
 		$(SRC_PATH)/moves/simple_rotations.c \
 		$(SRC_PATH)/moves/double_rotations.c \
 

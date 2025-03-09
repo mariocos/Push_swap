@@ -6,7 +6,7 @@
 /*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 12:35:31 by mariocos          #+#    #+#             */
-/*   Updated: 2025/03/08 13:45:30 by mario            ###   ########.fr       */
+/*   Updated: 2025/03/09 14:13:21 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ int	main(int argc, char **argv)
 	t_list	*s;
 
 	s = NULL;
-	if (argc == 2)
-		s = special(s, argv[1]);
+	if (argc == 1)
+		return (1);
 	else
-		s = setup(argc, argv);
+		s = parse_input(argc, argv);
 	if (!s)
-		error_exit(s);
+		error_exit(s, NULL);
 	if (sort_check(s->a, s->a_len) == 1)
 		free_all(s);
 	else if (s->a_len > 3)

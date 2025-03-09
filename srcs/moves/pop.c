@@ -18,7 +18,7 @@ void	ft_pb(t_list *s)
 	new_a = malloc(sizeof(int) * (s->a_len - 1));
 	new_b = malloc(sizeof(int) * (s->b_len + 1));
 	if (!new_a || !new_b)
-		error_exit(s);
+		error_exit(s, NULL);
 	while (j < s->a_len)
 		new_a[i++] = s->a[j++];
 	new_b[0] = s->a[0];
@@ -45,7 +45,7 @@ void	ft_pa(t_list *s)
 	new_a = malloc(sizeof(int) * (s->a_len + 1));
 	new_b = malloc(sizeof(int) * (s->b_len - 1));
 	if (!new_a || !new_b)
-		error_exit(s);
+		error_exit(s, NULL);
 	new_a[0] = s->b[0];
 	i = 0;
 	j = 1;
