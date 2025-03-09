@@ -15,6 +15,7 @@ static int	*ft_populate_list(int argc, char **argv, t_list *s)
 
 	i = 0;
 	list = (int *)malloc(sizeof(int) * (argc - 1));
+	s->a = list;
 	if (!list)
 		return (0);
 	while (i < argc - 1)
@@ -86,7 +87,7 @@ static t_list	*setup(int argc, char **strs)
 		error_exit(s, strs);
 	if (ft_check_params(argc, strs) == 0)
 		error_exit(s, strs);
-	s = (t_list *)malloc(sizeof(t_list));
+	s = (t_list *)calloc(sizeof(t_list), 1);
 	if (!s)
 		error_exit(s, strs);
 	s->a = ft_populate_list(argc, strs, s);
@@ -108,6 +109,7 @@ t_list	*parse_input(int argc, char **argv)
 
 	args = join_args(argv);
 	strs = ft_split(args, ' ');
+	free(args);
 	s = setup(argc, strs);
 	free_double_char(strs);
 	return (s);
